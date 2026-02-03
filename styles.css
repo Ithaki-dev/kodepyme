@@ -322,7 +322,7 @@ body {
     animation-duration: 30s;
 }
 
-/* Formas flotantes */
+/* Formas flotantes
 .floating-shapes {
     position: absolute;
     width: 100%;
@@ -398,7 +398,7 @@ body {
     animation: float 20s infinite ease-in-out;
     animation-delay: -15s;
     transform: rotate(-30deg);
-}
+} */
 
 @keyframes floatOrb {
     0%, 100% {
