@@ -521,8 +521,73 @@ body {
 }
 
 .problem-icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-md);
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dc2626;
+    transition: var(--transition);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.problem-card:nth-child(1) .problem-icon {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #dc2626;
+}
+
+.problem-card:nth-child(2) .problem-icon {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #d97706;
+}
+
+.problem-card:nth-child(3) .problem-icon {
+    background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+    color: #ea580c;
+}
+
+.problem-card:nth-child(4) .problem-icon {
+    background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+    color: #7c3aed;
+}
+
+.problem-card:hover .problem-icon {
+    transform: scale(1.1) rotate(5deg);
+    animation: shake 0.5s ease-in-out;
+}
+
+.problem-icon svg {
+    transition: var(--transition);
+}
+
+.problem-card:hover .problem-icon svg {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.1) rotate(-5deg);
+    }
+    75% {
+        transform: scale(1.1) rotate(5deg);
+    }
 }
 
 .problem-title {
@@ -577,15 +642,48 @@ body {
 }
 
 .solution-icon {
-    width: 60px;
-    height: 60px;
-    background-color: var(--bg-light-blue);
-    border-radius: var(--radius-lg);
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--spacing-md);
-    color: var(--primary-color);
+    transition: var(--transition);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.solution-card:nth-child(1) .solution-icon {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #1d4ed8;
+}
+
+.solution-card:nth-child(2) .solution-icon {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #059669;
+}
+
+.solution-card:nth-child(3) .solution-icon {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    color: #6366f1;
+}
+
+.solution-card:nth-child(4) .solution-icon {
+    background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+    color: #db2777;
+}
+
+.solution-card:hover .solution-icon {
+    transform: scale(1.15) rotate(5deg);
+    animation: shake 0.5s ease-in-out;
+}
+
+.solution-icon svg {
+    transition: var(--transition);
+}
+
+.solution-card:hover .solution-icon svg {
+    transform: scale(1.1);
 }
 
 .solution-title {
@@ -653,20 +751,43 @@ body {
 }
 
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-sm);
-    color: var(--primary-color);
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-sm);
+    border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--transition);
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+.service-card:nth-child(1) .service-icon {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #1e40af;
+}
+
+.service-card:nth-child(2) .service-icon {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #047857;
+}
+
+.service-card:nth-child(3) .service-icon {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #d97706;
 }
 
 .service-icon svg {
     transition: var(--transition);
 }
 
+.service-card:hover .service-icon {
+    transform: scale(1.15) rotate(-5deg);
+    animation: shake 0.5s ease-in-out;
+}
+
 .service-card:hover .service-icon svg {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1);
 }
 
 .service-title {
@@ -832,24 +953,60 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+.process-card:hover .process-number {
+    transform: scale(1.2);
+    box-shadow: var(--shadow-xl);
+    animation: shake 0.5s ease-in-out;
 }
 
 .process-icon {
-    width: 56px;
-    height: 56px;
-    background-color: var(--bg-light-blue);
-    border-radius: var(--radius-lg);
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
     transition: var(--transition);
+    animation: pulse 2.2s ease-in-out infinite;
+}
+
+.process-card:nth-child(1) .process-icon {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #d97706;
+}
+
+.process-card:nth-child(2) .process-icon {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #1e40af;
+}
+
+.process-card:nth-child(3) .process-icon {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+    color: #6366f1;
+}
+
+.process-card:nth-child(4) .process-icon {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #047857;
 }
 
 .process-card:hover .process-icon {
-    transform: rotate(5deg) scale(1.1);
-    background-color: var(--primary-color);
-    color: var(--text-white);
+    transform: rotate(-5deg) scale(1.15);
+    animation: shake 0.5s ease-in-out;
+}
+
+.process-icon svg {
+    transition: var(--transition);
+}
+
+.process-card:hover .process-icon svg {
+    transform: scale(1.1);
 }
 
 .process-card-title {
