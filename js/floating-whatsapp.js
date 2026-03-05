@@ -42,8 +42,6 @@ function initFloatingWhatsApp() {
 
     // Tracking de clicks (opcional)
     floatingBtn.addEventListener('click', () => {
-        console.log('Floating WhatsApp button clicked');
-        
         // Aquí puedes integrar con Google Analytics, Facebook Pixel, etc.
         // Ejemplo con Google Analytics (si lo tienes instalado):
         // gtag('event', 'click', {
