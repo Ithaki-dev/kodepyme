@@ -51,9 +51,6 @@ function initContactForm() {
         
         // Mostrar mensaje de éxito
         alert('¡Gracias! Te contactaremos pronto. Te estamos redirigiendo a WhatsApp para una respuesta más rápida.');
-        
-        // Log para debugging
-        console.log('Datos del formulario:', formData);
     });
 }
 
