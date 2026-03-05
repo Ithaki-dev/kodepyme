@@ -1156,16 +1156,6 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.tech-partners {
-    padding: var(--spacing-3xl) 0;
-    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-    overflow: hidden;
-}
-
-.tech-partners .section-title {
-    color: #ffffff;
-}
-
 .tech-carousel-wrapper {
     position: relative;
     margin-top: 3rem;
