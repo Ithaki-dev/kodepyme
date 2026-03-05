@@ -176,45 +176,81 @@ class Carousel {
 // TECH LOGOS CAROUSEL
 // ========================================
 
-const techUrls = [
-    'https://woocommerce.com/es/',
-    'https://es-cr.wordpress.org/',
-    'https://business.google.com/en-all/google-ads/',
-    'https://marketingplatform.google.com/about/',
-    'https://www.linkedin.com/feed/',
-    'https://www.meta.com/',
-    'https://www.semrush.com/',
-    'https://www.hostinger.com/',
-    'https://nodejs.org/',
-    'https://react.dev/'
+const techLogos = [
+    {
+        name: 'WooCommerce',
+        image: 'src/img/woocomerce_logo.png',
+        url: 'https://woocommerce.com/es/'
+    },
+    {
+        name: 'WordPress',
+        image: 'src/img/wordpress_logo.png',
+        url: 'https://es-cr.wordpress.org/'
+    },
+    {
+        name: 'Google Ads',
+        image: 'src/img/google_bussiness_logo.png',
+        url: 'https://business.google.com/en-all/google-ads/'
+    },
+    {
+        name: 'Google Marketing Platform',
+        image: 'src/img/google_market_logo.png',
+        url: 'https://marketingplatform.google.com/about/'
+    },
+    {
+        name: 'Google Analytics',
+        image: 'src/img/google_analytics_logo.png',
+        url: 'https://tagmanager.google.com/'
+    },
+    {
+        name: 'LinkedIn',
+        image: 'src/img/linkedin_logo.png',
+        url: 'https://www.linkedin.com/feed/'
+    },
+    {
+        name: 'Meta',
+        image: 'src/img/meta_logo.png',
+        url: 'https://www.meta.com/'
+    },
+    {
+        name: 'Semrush',
+        image: 'src/img/semrush_logo.png',
+        url: 'https://www.semrush.com/'
+    },
+    {
+        name: 'Hostinger',
+        image: 'src/img/hostinger_logo.png',
+        url: 'https://www.hostinger.com/'
+    },
+    {
+        name: 'Node.js',
+        image: 'src/img/nodejs_logo.png',
+        url: 'https://nodejs.org/'
+    },
+    {
+        name: 'React',
+        image: 'src/img/react_logo.png',
+        url: 'https://react.dev/'
+    }
 ];
 
-function getFaviconUrl(domain) {
-    const url = new URL(domain);
-    return `https://www.google.com/s2/favicons?domain=${url.hostname}&sz=128`;
-}
-
-function createLogoItem(url) {
+function createLogoItem(logoData) {
     const link = document.createElement('a');
-    link.href = url;
+    link.href = logoData.url;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
     link.className = 'tech-logo-item';
-    link.setAttribute('data-tech', new URL(url).hostname);
+    link.setAttribute('data-tech', logoData.name);
 
     const img = document.createElement('img');
-    const faviconUrl = getFaviconUrl(url);
-    img.src = faviconUrl;
-    img.alt = new URL(url).hostname;
-    img.title = new URL(url).hostname;
+    img.src = logoData.image;
+    img.alt = logoData.name;
+    img.title = logoData.name;
     
     // Error handling for failed image loads
     img.onerror = function() {
-        console.warn('⚠️ Failed to load:', new URL(url).hostname);
-        // Show placeholder
-        img.style.backgroundColor = '#374151';
-        img.style.width = '64px';
-        img.style.height = '64px';
+        console.warn('⚠️ Failed to load:', logoData.name);
+        img.style.opacity = '0.3';
     };
 
     link.appendChild(img);
@@ -232,14 +268,14 @@ function initTechCarousel() {
     track.className = 'tech-carousel-track';
 
     console.log('\n🚀 Initializing Tech Carousel...');
-    console.log('📦 Technologies to load:', techUrls.length);
+    console.log('📦 Technologies to load:', techLogos.length);
     
     // Create TWO complete sets for seamless infinite loop
     const sets = 2;
     
     for (let setIndex = 0; setIndex < sets; setIndex++) {
-        techUrls.forEach((url) => {
-            const item = createLogoItem(url);
+        techLogos.forEach((logoData) => {
+            const item = createLogoItem(logoData);
             track.appendChild(item);
         });
     }
@@ -255,7 +291,7 @@ function initTechCarousel() {
         const itemWidth = firstItem.offsetWidth;
         const gap = parseFloat(getComputedStyle(track).gap) || 0;
         const itemTotalWidth = itemWidth + gap;
-        const oneSetWidth = itemTotalWidth * techUrls.length;
+        const oneSetWidth = itemTotalWidth * techLogos.length;
         
         console.log('\n📊 Carousel Dimensions:');
         console.log('   Item width:', itemWidth + 'px');
