@@ -249,7 +249,6 @@ function createLogoItem(logoData) {
     
     // Error handling for failed image loads
     img.onerror = function() {
-        console.warn('⚠️ Failed to load:', logoData.name);
         img.style.opacity = '0.3';
     };
 
@@ -259,16 +258,10 @@ function createLogoItem(logoData) {
 
 function initTechCarousel() {
     const container = document.getElementById('techCarousel');
-    if (!container) {
-        console.warn('Tech carousel container not found');
-        return;
-    }
+    if (!container) return;
 
     const track = document.createElement('div');
     track.className = 'tech-carousel-track';
-
-    console.log('\n🚀 Initializing Tech Carousel...');
-    console.log('📦 Technologies to load:', techLogos.length);
     
     // Create TWO complete sets for seamless infinite loop
     const sets = 2;
@@ -292,12 +285,6 @@ function initTechCarousel() {
         const gap = parseFloat(getComputedStyle(track).gap) || 0;
         const itemTotalWidth = itemWidth + gap;
         const oneSetWidth = itemTotalWidth * techLogos.length;
-        
-        console.log('\n📊 Carousel Dimensions:');
-        console.log('   Item width:', itemWidth + 'px');
-        console.log('   Gap:', gap + 'px');
-        console.log('   One set width:', oneSetWidth + 'px');
-        console.log('   Total track width:', track.scrollWidth + 'px');
         
         let position = 0;
         const speed = 0.5; // pixels per frame (adjust for speed)
@@ -330,13 +317,6 @@ function initTechCarousel() {
         
         // Start animation
         animate();
-        
-        console.log('\n✅ Tech Carousel Ready');
-        console.log('   Unique technologies:', techUrls.length);
-        console.log('   Total items:', sets * techUrls.length);
-        console.log('   Speed: ' + speed + ' pixels/frame');
-        console.log('   Reset point:', oneSetWidth + 'px');
-        console.log('   🎯 Seamless infinite scroll with no visible reset!');
     }, 500);
 }
 
