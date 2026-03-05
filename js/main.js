@@ -8,9 +8,6 @@ function initCTATracking() {
 
     ctaButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const buttonText = this.textContent.trim();
-            console.log('CTA clicked:', buttonText);
-            
             // Aquí puedes integrar con Google Analytics, Facebook Pixel, etc.
             // Ejemplo con Google Analytics (si lo tienes instalado):
             // gtag('event', 'click', {
@@ -33,20 +30,10 @@ function updateWhatsAppLinks() {
     });
 }
 
-// Console branding
-function initConsoleBranding() {
-    console.log('%c🚀 KodePyme Landing Page', 'font-size: 20px; font-weight: bold; color: #2563eb;');
-    console.log('%cTecnología simple para empresarios ocupados', 'font-size: 14px; color: #6b7280;');
-    console.log('%c¿Interesado en trabajar con nosotros? Escríbenos!', 'font-size: 12px; color: #10b981;');
-}
-
 // Main initialization function
 function initApp() {
     updateWhatsAppLinks();
     initCTATracking();
-    initConsoleBranding();
-    
-    console.log('✅ KodePyme website initialized successfully');
 }
 
 // Auto-inicializar
