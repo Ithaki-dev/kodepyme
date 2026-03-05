@@ -1194,6 +1194,29 @@ body {
     background: linear-gradient(90deg, transparent 0%, #0f172a 100%);
 }
 
+/* Tech Partners Inline (dentro de services) */
+.tech-partners-inline {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.tech-partners-inline .tech-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.tech-partners-inline .tech-carousel-wrapper::before {
+    background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
+}
+
+.tech-partners-inline .tech-carousel-wrapper::after {
+    background: linear-gradient(90deg, transparent 0%, #ffffff 100%);
+}
+
 .tech-carousel-track {
     display: flex;
     gap: 4rem;
